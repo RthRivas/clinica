@@ -16,10 +16,24 @@ class Medico{
 			die($e->getMessage());
 		}
 	}
+
+	public function ListarMedico(){
+		try{
+
+			$result=array();
+			$stm=$this->pdo->prepare("SELECT * FROM medico");
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
+
+
 	public function ListarEsp(){
 		try{
-			//require_once("class.usuario.php");
-			//equire_once("session.php");
+					
 		
 			$result=array();
 			$stm=$this->pdo->prepare("SELECT * FROM especialidad");
@@ -31,24 +45,6 @@ class Medico{
 			die($e->getMessage());
 		}
 	}
-
-	public function ListarCargo(){
-		try{
-			//require_once("class.usuario.php");
-			//equire_once("session.php");
-		
-			$result=array();
-			$stm=$this->pdo->prepare("SELECT * FROM cargos");
-			$stm->execute();
-			
-			return $stm->fetchAll(PDO::FETCH_OBJ);
-		}
-		catch(Exception $e){
-			die($e->getMessage());
-		}
-	}
-	
-	
 	
 	public function Obtener($id_medico){
 		try{
@@ -100,14 +96,13 @@ class Medico{
 			
 			
 			$sql = "INSERT INTO medico(nombre_medico, JVPM, id_especialidad, id_cargo)
-			VALUES(?,?,?,?)";
+			VALUES(?,?,?,'1')";
 			$this->pdo->prepare($sql)->execute
 			(
 				array(
 					   $data->nombre_medico,
 					   $data->JVPM,
-					   $data->id_especialidad,
-					   $data->id_cargo
+					   $data->id_especialidad
 				)
 			);
 			

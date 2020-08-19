@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,28 +46,28 @@
 
 				<input type="hidden" name="id_paciente" value="<?php echo $datos->id_paciente; ?>" />
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Dui de Paciente *</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="text" name="Dui_paciente" placeholder="DUI" value="<?php echo $datos->Dui_paciente; ?>">
 				</div>	
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Nombre *</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="text" name="nombre_paciente" placeholder="Nombre"  id="nombre_paciente" value="<?php echo $datos->nombre_paciente; ?>">
 				</div>	
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Fecha de Nacimiento</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento"  id="fecha_nacimiento" value="<?php echo $datos->fecha_nacimiento; ?>">
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Edad *</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="text" name="edad" placeholder="Edad" id="edad" value="<?php echo $datos->edad; ?>">
@@ -76,7 +75,7 @@
 				</div>
 
 				
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Genero *</span>
 					 <div class="col-sm-6">
 						<input class="form-control" placeholder="Genero" type="text" name="genero" 
@@ -89,14 +88,14 @@
 				</div>
 
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Telefono *</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="text" name="telefono" placeholder="Telefono" id="telefono" value="<?php echo $datos->telefono; ?>">
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<label class="col-sm-3 control-label" for="Departamentos">Departamentos</label>
 					<div class="col-sm-6">
 								<select class="form-control" name="id_departamento" id="id_departamento">
@@ -107,7 +106,7 @@
 					</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<label class="col-sm-3 control-label" for="Municipios">Municipios</label>
 					<div class="col-sm-6">
 								<select class="form-control" name="id_municipio" id="id_municipio">
@@ -118,14 +117,14 @@
 					</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Direccion *</span>
 					<div class="col-sm-6">
 					<input class="form-control"  type="text" name="direccion" placeholder="Direccion" id="direccion" value="<?php echo $datos->direccion; ?>">
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Email *</span>
 					<div class="col-sm-6">
 					<input class="form-control"  type="text" name="email" placeholder="Email" id="email" value="<?php echo $datos->email; ?>">
@@ -133,7 +132,7 @@
 				</div>
 
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Responsable</span>
 					<div class="col-sm-6">
 					<input class="form-control" name="id_responsable" placeholder="Responsable" id="id_responsable" value="<?php echo $datos->id_responsable; ?>">
@@ -141,21 +140,21 @@
 				</div>
 
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Alergia</span>
 					<div class="col-sm-6">
 					<input class="form-control" name="alergia" placeholder="Alergia" id="alergia" value="<?php echo $datos->alergia; ?>">
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Grupo Sanguineo</span>
 					<div class="col-sm-6">
 					<input class="form-control" type="text" name="grupo_sanguineo" placeholder="Grupo sanguineo" id="grupo_sanguineo" value="<?php echo $datos->grupo_sanguineo; ?>">
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<label class="col-sm-3 control-label" for="Cargos">Cargo</label>
 					<div class="col-sm-6">
 								<select class="form-control" name="id_cargo" id="id_cargo">
@@ -166,7 +165,7 @@
 				</div>
 				</div>
 
-				<div class="form-group" data-validate="Ingresa tu DUi">
+				<div class="form-group">
 					<span class="col-sm-3 control-label">Estado</span>
 					<div class="col-sm-6">
 					<input class="form-control" name="estado" placeholder="estado" id="estado" value="<?php echo $datos->estado; ?>">

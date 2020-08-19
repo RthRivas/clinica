@@ -36,15 +36,15 @@
             </li>
             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="indexMedico.php">Medicos</a></li>
-                <li><a href="indexEnfermera.php">Enfermeras</a></li>
+                <li><a href="medicos.php">Medicos</a></li>
+                <li><a href="enfermeras.php">Enfermeras</a></li>
               </ul>
             </li>
 
             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="indexCitas.php">Citas</a></li>
-                <li><a href="indexAgenda.php">Agenda</a></li>
+                <li><a href="citas.php">Citas</a></li>
+                <li><a href="agenda.php">Agenda</a></li>
               </ul>
             </li>
             <li><a href="indexRecetas.php">Recetas</a></li>

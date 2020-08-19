@@ -33,7 +33,6 @@ class EnfermeraController{
         $datos->id_enfermera= $_REQUEST['id_enfermera'];
 		$datos->nombre_enfermera=$_REQUEST['nombre_enfermera'];
 		$datos->id_cargo= $_REQUEST['id_cargo'];
-		$datos->telefono= $_REQUEST['telefono'];
         
 
         $datos->id_enfermera > 0 

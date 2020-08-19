@@ -4,7 +4,6 @@ class Enfermera{
 	public $id_enfermera;
 	public $nombre_enfermera;
 	public $id_cargo;
-	public $telefono;
 	
 	
 	public function __CONSTRUCT(){
@@ -17,13 +16,11 @@ class Enfermera{
 	}
 
 
-	public function ListarCargo(){
+		public function ListarEnfermera(){
 		try{
-			//require_once("class.usuario.php");
-			//equire_once("session.php");
 		
 			$result=array();
-			$stm=$this->pdo->prepare("SELECT * FROM cargos");
+			$stm=$this->pdo->prepare("SELECT * FROM enfermera");
 			$stm->execute();
 			
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -32,6 +29,7 @@ class Enfermera{
 			die($e->getMessage());
 		}
 	}
+	
 	
 	
 	
@@ -62,15 +60,13 @@ class Enfermera{
 	public function Actualizar($data){
 		try{
 			$sql = 'UPDATE enfermera
-			SET nombre_enfermera= ?, id_cargo= ?, telefono= ?
+			SET nombre_enfermera= ?
 			WHERE id_enfermera=?
 			';
 			$this->pdo->prepare($sql)->execute
 				(
 					array(
 						$data->nombre_enfermera,
-						$data->id_cargo,
-						$data->telefono
 						)
 				);
 		}
@@ -84,14 +80,12 @@ class Enfermera{
 		try{
 			
 			
-			$sql = "INSERT INTO enfermera(nombre_enfermera, id_cargo, telefono)
-			VALUES(?,?,?)";
+			$sql = "INSERT INTO enfermera(nombre_enfermera, id_cargo)
+			VALUES(?,'2')";
 			$this->pdo->prepare($sql)->execute
 			(
 				array(
 					   $data->nombre_enfermera,
-					   $data->id_cargo,
-					   $data->telefono
 				)
 			);
 			
