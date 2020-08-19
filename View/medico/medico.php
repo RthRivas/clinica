@@ -5,7 +5,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<div class="content">
 
   	<div class="col-12">
 		<center><h1>Medicos</h1>
@@ -37,6 +36,7 @@
 					<TD><a class="btn btn-warning btn-sm" href="?c=Medico&a=Crud&id_medico=<?php echo $r->id_medico; ?>">Editar 📝 </a><br>
 						<a class="btn btn-danger btn-sm" href="?c=Medico&a=Eliminar&id_medico=<?php echo $r->id_medico; ?>">Eliminar 🗑️</a>
 					</TD>
+					
 				</TR>	 
 <?php endforeach; ?>	  
     </tbody>

@@ -1,40 +1,33 @@
+<?php
+ include "welcomeadmin.php";
 
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<div class="content">
+?>
+<div class="container-md">
 
   	<div class="col-12">
-		<center><h1>Control de Pacientes</h1>
+		<center><h2>Control de Pacientes</h2>
 		<a href="?c=Ficha&a=Crud"><span class="icon-Nuevo" ></span>Crear Ficha 💾</a></center>
 		<br>
-		<div class="table-responsive">	
 			
-			<table class="table table-bordered">
+			<table  class="table table-bordered">
         
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
-						<th>DUI</th>
-						<th>NOMBRE</th>
-						<th>TELEFONO</th> 
-						<th>DIRECCION</th> 
-						<th>ESTADO</th> 
-						<th>OPCIONES</th> 
-						<th>DETALLES</th> 
+						<th scope="col">ID</th>
+						<th scope="col">DUI</th>
+						<th scope="col">NOMBRE</th>
+						<th scope="col">TELEFONO</th> 
+						<th scope="col">DIRECCION</th> 
+						<th scope="col">ESTADO</th> 
+						<th scope="col">OPCIONES</th> 
+						<th scope="col">DETALLES</th> 
 						
 					</tr>
 				</thead>
 <?php foreach($this->model->ListarFicha() as $r): ?>
 				<tbody>
 	
-				<TR>
-            
+				<TR> 
 					<TD><?php echo $r->id_paciente;?></TD>
 					<TD><?php echo $r->Dui_paciente;?></TD>
 					<TD><?php echo $r->nombre_paciente;?></TD>
@@ -46,11 +39,15 @@
 					</TD>
 					<TD><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Ver Paciente</button></TD>
 
+
 				</TR>	 
 <?php endforeach; ?>	  
     </tbody>
 </table> 
 
+
+</div>
+</div>
 <!-- Modal: Informacion de Usuario -->
 
 <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -134,6 +131,4 @@
   </div>
 </div>
 
-</div>
-</div>
 </body>
