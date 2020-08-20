@@ -65,6 +65,19 @@ public function ListarFicha()
 
 
 //---------listar eje----------
+
+		public function ListarF($id_paciente){
+		try{
+			$stm = $this->pdo
+			->prepare('SELECT * FROM ficha_paciente WHERE id_paciente=?');
+			$stm->execute(array($id_paciente));
+		}
+		catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
+
+
 //------fin listar----------//
 
 

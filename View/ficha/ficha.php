@@ -56,7 +56,7 @@
                                             <td><a class="btn btn-warning btn-sm" href="?c=Ficha&a=Crud&id_paciente=<?php echo $r->id_paciente; ?>">Editar 📝 </a>
             <a class="btn btn-danger btn-sm" href="?c=Ficha&a=Eliminar&id_paciente=<?php echo $r->id_paciente; ?>">Eliminar 🗑️</a></td>
 
-                                        <td><buttontype="button" class="btn btn-secondary mb-1">Ver Expediente</button></td>
+                                        <td><a class="btn btn-success" href="?c=Ficha&a=MostrarD&id_paciente=<?php echo $r->id_paciente; ?>">Ver Expediente</a></td>
 
                                         </tr>
                                         <?php endforeach; ?>  

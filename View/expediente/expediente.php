@@ -58,7 +58,7 @@
                                             <TD><a class="btn btn-warning btn-sm" href="?c=Expediente&a=Crud&num_expediente=<?php echo $r->num_expediente; ?>">Editar 📝 </a>
                                                 <a class="btn btn-danger btn-sm" href="?c=Expediente&a=Eliminar&num_expediente=<?php echo $r->num_expediente; ?>">Eliminar 🗑️</a>
                                             </TD>
-                                            <TD><button type="button" class="btn btn-primary">Ver Expediente</button></TD>
+                                            <TD><a class="btn btn-success" href="?c=Expediente&a=MostrarE&num_expediente=<?php echo $r->num_expediente; ?>">Ver Expediente</a></TD>
 
                                         </TR>    
                                     <?php endforeach; ?>      
@@ -74,6 +74,7 @@
         </div><!-- .content -->
 </body>
 <html>
+
 
 
 
