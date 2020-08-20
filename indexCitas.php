@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="assets/style.css">
- <link href="Assets\css\bootstrap.min.css" rel="stylesheet">
-	  <link href="Assets\css\Style.css" rel="stylesheet">
+
 <?php
 require_once 'model/database.php';
 $controller = 'Citas';

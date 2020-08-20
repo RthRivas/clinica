@@ -26,7 +26,7 @@
 			try
 			{
 				$result = array();
-				$cmd=$this->pdo->prepare("select a.id_cita as id, b.nombre_medico as Medico, c.nombre_enfermera as Enfermera, d.nombre_paciente as Paciente,a.hora as hora, a.fecha as fecha from citas as a INNER join medico as b on a.id_medico = b.id_medico inner join enfermera as c on a.id_enfermera = c.id_enfermera INNER join ficha_paciente as d on a.Dui_paciente = d.Dui_paciente");
+				$cmd=$this->pdo->prepare("select a.id_cita as id, b.nombre_medico as Medico, c.nombre_enfermera as Enfermera, d.nombre_paciente as Paciente,a.fecha as fecha, a.hora as hora from citas as a INNER join medico as b on a.id_medico = b.id_medico inner join enfermera as c on a.id_enfermera = c.id_enfermera INNER join ficha_paciente as d on a.id_paciente = d.id_paciente");
 				$cmd->execute();
 
 				return $cmd->fetchAll(PDO::FETCH_OBJ);

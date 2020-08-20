@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Clnica</title>
+    <title>Clinica</title>
     <meta name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,7 +81,7 @@
                      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Consultas</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="View/Citas/index.php">Citas</a></li>
+                            <li><i class="fa fa-table"></i><a href="indexCitas.php">Citas</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="#">Agenda</a></li>
                         </ul>
                     </li>

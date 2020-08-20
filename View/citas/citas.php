@@ -8,7 +8,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                      PACIENTES
+                      PERSONAL
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="?c=Ficha&a=Crud"><span class="icon-Nuevo" ></span>Crear Ficha Medica 💾</a></center></li>
+                            <li><a href="?c=Citas&a=Crud"><span class="icon-Nuevo" ></span>Crear Cita 💾</a></center></li>
 
                         </ol>
                     </div>
@@ -37,29 +37,29 @@
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>DUI</th>
-                                            <th>NOMBRE</th>
-                                            <th>TELEFONO</th>
-                                            <th>OPCIONES</th>
-                                            <th>DETALLES</th>
+                                            <th>ID</th>
+											<th>Medico</th>
+											<th>Enfermera</th>
+											<th>Paciente</th>
+											<th>Hecha</th>
+											<th>Hora</th>
+											<th>Opciones</th> 
                                         </tr>
                                     </thead>
-
-                                    <?php foreach($this->model->ListarFicha() as $r): ?>
+                                    <?php foreach($this->model->ListarCitas() as $datos): ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $r->id_paciente;?></td>
-                                            <td><?php echo $r->Dui_paciente;?></td>
-                                            <td><?php echo $r->nombre_paciente;?></td>
-                                            <td><?php echo $r->telefono;?></td>
-                                            <td><a class="btn btn-warning btn-sm" href="?c=Ficha&a=Crud&id_paciente=<?php echo $r->id_paciente; ?>">Editar 📝 </a>
-            <a class="btn btn-danger btn-sm" href="?c=Ficha&a=Eliminar&id_paciente=<?php echo $r->id_paciente; ?>">Eliminar 🗑️</a></td>
+                                           <td><?php echo $datos->id ?></td>
+											<td><?php echo $datos->Medico ?></td>
+											<td><?php echo $datos->Enfermera ?></td>
+											<td><?php echo $datos->Paciente ?></td>
+											<td><?php echo $datos->fecha ?></td>
+											<td><?php echo $datos->hora ?></td>
+											<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $datos->id?>">Editar 📝</a>
+											<a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $datos->id?>">Eliminar 🗑️</a></td>
 
-                                        <td><buttontype="button" class="btn btn-secondary mb-1">Ver Expediente</button></td>
-
-                                        </tr>
-                                        <?php endforeach; ?>  
+                                        </TR>    
+                                    <?php endforeach; ?>      
                                     </tbody>
                                 </table>
                             </div>

@@ -12,7 +12,7 @@
 
 		public function Index()
 		{	
-			require_once 'view/Citas/index.php';
+			require_once 'view/citas/citas.php';
 		}
 
 

@@ -46,7 +46,7 @@ class Expediente{
 			try
 			{
 				$result = array();
-				$cmd=$this->pdo->prepare("SELECT * FROM expediente");
+				$cmd=$this->pdo->prepare("SELECT a.num_expediente as num_expediente, b.nombre_paciente as id_paciente, a.diagnostico as diagnostico, a.medicamento as medicamento, d.nombre_medico as id_medico, a.peso as peso, a.altura as altura, a.cirugias as cirugias, a.antecedentes as antecedentes, a.enfermedades as enfermedades, a.vacunas as vacunas FROM expediente as a INNER JOIN ficha_paciente as b on a.id_paciente = b.id_paciente INNER JOIN medico as d on a.id_medico = d.id_medico");
 				$cmd->execute();
 
 				return $cmd->fetchAll(PDO::FETCH_OBJ);
@@ -57,6 +57,9 @@ class Expediente{
 			}
 		}
 
+
+///----ejem----//
+		
 	
 ///------------///
 	public function ListarMedico(){
