@@ -38,10 +38,6 @@
 
 </head>
 
-<body>
-
-
-    <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -50,71 +46,90 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/avatar/avatar.png" alt="Logo" width="80"
-            height="80"></a>
-         <p><a href="#"><span class="glyphicon glyphicon-user"></span>Bienvenido <?php if(isset($_SESSION['user_login'])) {echo $row['username'];}?></a>
-                 </div></p>
+                <a class="navbar-brand" href="./"><img src="images/logo3.png" alt="Logo" width="110"
+     height="100"></a>
+            </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <center><a href="#"><span class="glyphicon glyphicon-user"></span>Bienvenido <?php if(isset($_SESSION['user_login'])) {echo $row['username'];}?></a></center>
+                    </li>
+
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Inicio </a>
+                        <a href="welcomeadmin.php"> <i class="menu-icon fa fa-dashboard"></i>Inicio </a>
                     </li>
                     <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Pacientes</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-id-badge"></i>Pacientes</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="Index_Ficha.php">Ficha de pacientes</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Expediente</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="Index_Ficha.php">Ficha de pacientes</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="indexExpediente.php">Expediente</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Personal</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Medicos</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Enfermeras</a></li>
+                            <li><i class="fa fa-user"></i><a href="indexMedico.php">Medicos</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="indexEnfermera.php">Enfermeras</a></li>
                         </ul>
                     </li>
 
                      <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Consultas</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Consultas</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Citas</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Agenda</a></li>
+                            <li><i class="fa fa-table"></i><a href="View/Citas/index.php">Citas</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="#">Agenda</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Recetas </a>
+                        <a href="#"> <i class="menu-icon ti-folder"></i>Recetas </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Reportes </a>
+                        <a href="#"> <i class="menu-icon fa fa-line-chart"></i>Reportes </a>
                     </li>
-
-                  
-
-
-                     <li>
-                         <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i> Cerrar Sesion</a>
-                    </li>
-                         
-                    </div>
-                     </ul>
-
-
+                </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-    </aside>
-
-<body>..</body>
+    </aside>   
     <!-- Left Panel -->
 
     <!-- Right Panel -->
 
- <!-- .content --><!-- /#right-panel -->
+    <div id="right-panel" class="right-panel">
 
-    <!-- Right Panel -->
+        <!-- Header-->
+    <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <div class="header-left">
+                        <div class="form-inline">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/avatar/avatar.png" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i> Cerrar Sesion</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
@@ -146,8 +161,4 @@
             });
         })(jQuery);
     </script>
-
-</body>
-
-</html>
 

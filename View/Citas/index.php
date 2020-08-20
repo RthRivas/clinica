@@ -1,4 +1,8 @@
-<body>
+<?php
+ include "welcomeadmin.php";
+
+?>
+
 <main role="main" class="container">
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
@@ -46,4 +50,3 @@
 	</div>
 </div>
 </main>
-</body>

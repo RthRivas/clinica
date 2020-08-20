@@ -2,133 +2,71 @@
  include "welcomeadmin.php";
 
 ?>
-<div class="container-md">
 
-  	<div class="col-12">
-		<center><h2>Control de Pacientes</h2>
-		<a href="?c=Ficha&a=Crud"><span class="icon-Nuevo" ></span>Crear Ficha 💾</a></center>
-		<br>
-			
-			<table  class="table table-bordered">
-        
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">ID</th>
-						<th scope="col">DUI</th>
-						<th scope="col">NOMBRE</th>
-						<th scope="col">TELEFONO</th> 
-						<th scope="col">DIRECCION</th> 
-						<th scope="col">ESTADO</th> 
-						<th scope="col">OPCIONES</th> 
-						<th scope="col">DETALLES</th> 
-						
-					</tr>
-				</thead>
-<?php foreach($this->model->ListarFicha() as $r): ?>
-				<tbody>
-	
-				<TR> 
-					<TD><?php echo $r->id_paciente;?></TD>
-					<TD><?php echo $r->Dui_paciente;?></TD>
-					<TD><?php echo $r->nombre_paciente;?></TD>
-					<TD><?php echo $r->telefono;?></TD>
-					<TD><?php echo $r->direccion;?></TD>
-					<TD><?php echo $r->estado;?></TD>
-					<TD><a class="btn btn-warning btn-sm" href="?c=Ficha&a=Crud&id_paciente=<?php echo $r->id_paciente; ?>">Editar 📝 </a><br>
-						<a class="btn btn-danger btn-sm" href="?c=Ficha&a=Eliminar&id_paciente=<?php echo $r->id_paciente; ?>">Eliminar 🗑️</a>
-					</TD>
-					<TD><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Ver Paciente</button></TD>
+<body>
+<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                      PACIENTES
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="?c=Ficha&a=Crud"><span class="icon-Nuevo" ></span>Crear Ficha Medica 💾</a></center></li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Registros</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>DUI</th>
+                                            <th>NOMBRE</th>
+                                            <th>TELEFONO</th>
+                                            <th>OPCIONES</th>
+                                            <th>DETALLES</th>
+                                        </tr>
+                                    </thead>
+
+                                    <?php foreach($this->model->ListarFicha() as $r): ?>
+                                    <tbody>
+                                        <tr>
+                                            <td><?php echo $r->id_paciente;?></td>
+                                            <td><?php echo $r->Dui_paciente;?></td>
+                                            <td><?php echo $r->nombre_paciente;?></td>
+                                            <td><?php echo $r->telefono;?></td>
+                                            <td><a class="btn btn-warning btn-sm" href="?c=Ficha&a=Crud&id_paciente=<?php echo $r->id_paciente; ?>">Editar 📝 </a>
+            <a class="btn btn-danger btn-sm" href="?c=Ficha&a=Eliminar&id_paciente=<?php echo $r->id_paciente; ?>">Eliminar 🗑️</a></td>
+
+                                        <td><button type="button" class="btn btn-primary">Ver Expediente</button></td>
+
+                                        </tr>
+                                        <?php endforeach; ?>  
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
 
-				</TR>	 
-<?php endforeach; ?>	  
-    </tbody>
-</table> 
-
-
-</div>
-</div>
-<!-- Modal: Informacion de Usuario -->
-
-<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><?php echo $r->nombre_paciente;?></h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body">
-
-        <table class="table table-hover">
-          <thead>
-            <th>DUI</th>
-            <th>FECHA DE NACIMIENTO</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->Dui_paciente;?></td>
-           <td><?php echo $r->fecha_nacimiento;?></td>
-          </tbody>
-
-           <thead>
-            <th>EDAD</th>
-            <th>GENERO</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->edad;?></td>
-           <td><?php echo $r->genero;?></td>
-          </tbody>
-
-          <thead>
-            <th>TELEFONO</th>
-            <th>EMAIL</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->telefono;?></td>
-           <td><?php echo $r->email;?></td>
-          </tbody>
-
-           <thead>
-            <th>RESPONSABLE</th>
-            <th>DIRECCION</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->id_responsable;?> <a href="?c=Responsable&a=Crud"><span class="icon-Nuevo" ></span>Agregar Responsable</a></td>
-
-           <td><?php echo $r->direccion;?></td>
-          </tbody>
-
-          <thead>
-            <th>DEPARTAMENTO</th>
-            <th>MUNICIPIO</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->id_departamento;?></td>
-           <td><?php echo $r->id_municipio;?></td>
-          </tbody>
-
-          <thead>
-            <th>ALERGIA</th>
-            <th>TIPO DE SANGRE</th>
-          </thead>
-          <tbody>
-          <td><?php echo $r->alergia;?></td>
-           <td><?php echo $r->grupo_sanguineo;?></td>
-          </tbody>
-        </table>
-
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
