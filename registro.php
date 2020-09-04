@@ -46,7 +46,7 @@ if(isset($_REQUEST['btn_register'])) //button name "btn_register"
 			{
 				$new_password = password_hash($password, PASSWORD_DEFAULT); //encrypt password using password_hash()
 				
-				$insert_stmt=$db->prepare("INSERT INTO usuarios	(username,email,pass, id_Cargo) VALUES(:uname,:uemail,:upassword, '3')"); 		//sql insert query					
+				$insert_stmt=$db->prepare("INSERT INTO usuarios	(username,email,pass, id_Cargo) VALUES(:uname,:uemail,:upassword, '5')"); 		//sql insert query					
 				
 				if($insert_stmt->execute(array(	':uname'	=>$username, 
 												':uemail'	=>$email, 

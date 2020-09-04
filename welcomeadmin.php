@@ -69,14 +69,26 @@
                             <li><i class="fa fa-file-word-o"></i><a href="indexExpediente.php">Expediente</a></li>
                         </ul>
                     </li>
-
+ <?php if($row['id_cargo'] == 1): ?>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-user"></i><a href="indexMedico.php">Medicos</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="indexEnfermera.php">Enfermeras</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="indexRecepcionista.php">Recepcionista</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#"> <i class="menu-icon fa fa-line-chart"></i>Reportes </a>
+                    </li>
+  <?php endif;  ?>
+ <?php if($row['id_cargo'] == 2): ?>
+
+                    <li>
+                        <a href="#"> <i class="menu-icon fa fa-line-chart"></i>Reportes </a>
+                    </li>
+  <?php endif;  ?>
+
 
                      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Consultas</a>
@@ -89,9 +101,7 @@
                     <li>
                         <a href="#"> <i class="menu-icon ti-folder"></i>Recetas </a>
                     </li>
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-line-chart"></i>Reportes </a>
-                    </li>
+                    
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
