@@ -38,6 +38,9 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>NOMBRE</th>
+                                            <th>TELEFONO</th>
+                                            <th>DIRECCION</th>
+                                            <th>TURNO</th>
                                             <th>OPCIONES</th>     
                                         </tr>
                                     </thead>
@@ -47,8 +50,11 @@
                                         <tr>
                                            <TD><?php echo $r->id_enfermera;?></TD>
                                             <TD><?php echo $r->nombre_enfermera;?></TD>
-
-                                            <TD><a class="btn btn-warning btn-sm" href="?c=Enfermera&a=Crud&id_enfermera=<?php echo $r->id_enfermera; ?>">Editar 📝 </a>
+                                            <TD><?php echo $r->telefono;?></TD>
+                                            <TD><?php echo $r->direccion;?></TD>
+                                            <TD><?php echo $r->turno;?></TD>
+                                            
+                                           <TD><a class="btn btn-warning btn-sm" href="?c=Enfermera&a=Crud&id_enfermera=<?php echo $r->id_enfermera; ?>">Editar 📝 </a>
                                                 <a class="btn btn-danger btn-sm" href="?c=Enfermera&a=Eliminar&id_enfermera=<?php echo $r->id_enfermera; ?>">Eliminar 🗑️</a>
                                             </TD>
                                         </TR>    

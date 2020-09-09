@@ -46,18 +46,19 @@
 											<th>Opciones</th> 
                                         </tr>
                                     </thead>
-                                    <?php foreach($this->model->ListarCitas() as $datos): ?>
+                                    <?php foreach($this->model->ListarCitas() as $r): ?>
                                     <tbody>
                                         <tr>
-                                           <td><?php echo $datos->id ?></td>
-											<td><?php echo $datos->Medico ?></td>
-											<td><?php echo $datos->Enfermera ?></td>
-											<td><?php echo $datos->Paciente ?></td>
-											<td><?php echo $datos->fecha ?></td>
-											<td><?php echo $datos->hora ?></td>
-											<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $datos->id?>">Editar 📝</a>
-											<a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $datos->id?>">Eliminar 🗑️</a></td>
-
+                                             <TD><?php echo $r->id_cita;?></TD>
+                                          <TD><?php echo $r->id_paciente;?></TD>
+                                            <TD><?php echo $r->id_medico;?></TD>
+                                            <TD><?php echo $r->id_enfermera;?></TD>
+                                            <TD><?php echo $r->fecha;?></TD>
+                                            <TD><?php echo $r->hora;?></TD>
+                                            
+                                           <TD><a class="btn btn-warning btn-sm" href="?c=Citas&a=Crud&id_cita=<?php echo $r->id_cita; ?>">Editar 📝 </a>
+                                                <a class="btn btn-danger btn-sm" href="?c=Citas&a=Eliminar&id_cita=<?php echo $r->id_cita; ?>">Eliminar 🗑️</a>
+                                            </TD>
                                         </TR>    
                                     <?php endforeach; ?>      
                                     </tbody>

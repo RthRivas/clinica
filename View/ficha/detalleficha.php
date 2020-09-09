@@ -24,20 +24,17 @@
             </div>
         </div>
 
-        <div class="content mt-3">
+ <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
-                    <div class="col-md-12">
+<div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title"><?php echo $datos->nombre_paciente;?></strong>
                             </div>
-                            <div class="card-body">											
-											
-
-         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-          <thead>
+                            <div class="card-body">
+<table class="table">
+      <thead>
             <th>DUI</th>
             <th>FECHA DE NACIMIENTO</th>
           </thead>
@@ -91,13 +88,11 @@
           <td><?php echo $datos->alergia;?></td>
            <td><?php echo $datos->grupo_sanguineo;?></td>
           </tbody>
-        </table>
-
- </div>
+                                </table>
+                            </div>
                         </div>
                     </div>
-
-
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
+ </div>
+  </div>
+   </div>
+   

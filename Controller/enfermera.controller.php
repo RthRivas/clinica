@@ -32,8 +32,11 @@ class EnfermeraController{
 		
         $datos->id_enfermera= $_REQUEST['id_enfermera'];
 		$datos->nombre_enfermera=$_REQUEST['nombre_enfermera'];
-		$datos->id_cargo= $_REQUEST['id_cargo'];
-        
+        $datos->telefono=$_REQUEST['telefono'];
+        $datos->direccion=$_REQUEST['direccion'];
+        $datos->turno=$_REQUEST['turno'];
+        $datos->id_cargo= $_REQUEST['id_cargo'];
+
 
         $datos->id_enfermera > 0 
             ? $this->model->Actualizar($datos)

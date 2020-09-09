@@ -3,6 +3,9 @@ class Enfermera{
 	private $pdo;
 	public $id_enfermera;
 	public $nombre_enfermera;
+	public $telefono;
+	public $direccion;
+	public $turno;
 	public $id_cargo;
 	
 	
@@ -60,13 +63,17 @@ class Enfermera{
 	public function Actualizar($data){
 		try{
 			$sql = 'UPDATE enfermera
-			SET nombre_enfermera= ?
+			SET nombre_enfermera= ?, telefono=?, direccion= ?, turno=?
 			WHERE id_enfermera=?
 			';
 			$this->pdo->prepare($sql)->execute
 				(
 					array(
 						$data->nombre_enfermera,
+						$data->telefono,
+						$data->direccion,
+						$data->turno,
+						$data->id_enfermera						
 						)
 				);
 		}
@@ -80,12 +87,15 @@ class Enfermera{
 		try{
 			
 			
-			$sql = "INSERT INTO enfermera(nombre_enfermera, id_cargo)
-			VALUES(?,'2')";
+			$sql = "INSERT INTO enfermera(nombre_enfermera, telefono, direccion, turno, id_cargo)
+			VALUES(?,?,?,?,'3')";
 			$this->pdo->prepare($sql)->execute
 			(
 				array(
 					   $data->nombre_enfermera,
+					   $data->telefono,
+					   $data->direccion,
+					   $data->turno   	   
 				)
 			);
 			
@@ -94,7 +104,21 @@ class Enfermera{
 			die($e->getMessage());
 		}
 	}
-
+public function ListarCargo(){
+		try{
+			//require_once("class.usuario.php");
+			//equire_once("session.php");
+		
+			$result=array();
+			$stm=$this->pdo->prepare("SELECT * FROM cargos");
+			$stm->execute();
+			
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
 		 
 	
 	}

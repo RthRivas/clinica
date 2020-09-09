@@ -39,7 +39,10 @@
                                             <th>ID</th>
                                             <th>NOMBRE</th>
                                             <th>JVPM</th> 
-                                            <th>ESPECIALIDAD</th> 
+                                            <th>ESPECIALIDAD</th>
+                                            <th>TELEFONO</th>
+                                            <th>DIRECCION</th>
+                                            <th>ESTADO</th>
                                             <th>OPCIONES</th>   
                                         </tr>
                                     </thead>
@@ -50,7 +53,10 @@
                                             <TD><?php echo $r->nombre_medico;?></TD>
                                             <TD><?php echo $r->JVPM;?></TD>
                                             <TD><?php echo $r->id_especialidad;?></TD>
-
+                                            <TD><?php echo $r->telefono;?></TD>
+                                            <TD><?php echo $r->direccion;?></TD>
+                                            <TD><?php echo $r->estado;?></TD>                                     
+                                            
                                             <TD><a class="btn btn-warning btn-sm" href="?c=Medico&a=Crud&id_medico=<?php echo $r->id_medico; ?>">Editar 📝 </a>
                                                 <a class="btn btn-danger btn-sm" href="?c=Medico&a=Eliminar&id_medico=<?php echo $r->id_medico; ?>">Eliminar 🗑️</a>
                                             </TD>

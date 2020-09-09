@@ -4,129 +4,119 @@
 ?>
 
 <body>
-	
-	<div class="wrapper">
-	
-	<div class="container">
-			
-		<div class="col-lg-12">
-		
-		<?php
-		if(isset($errorMsg))
-		{
-			foreach($errorMsg as $error)
-			{
-			?>
-				<div class="alert alert-danger">
-					<strong>WRONG ! <?php echo $error; ?></strong>
-				</div>
-            <?php
-			}
-		}
-		if(isset($registerMsg))
-		{
-		?>
-			<div class="alert alert-success">
-				<strong><?php echo $registerMsg; ?></strong>
-			</div>
-        <?php
-		}
-		?>   
-			<center><h2>Expendiente</h2></center>
-					
-			<form class="form-horizontal" action="?c=Expediente&a=Guardar" method="POST">
+		 
+<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                       <a>Expedientes</button></a>
+                    </div>
+                    <a href="indexExpediente.php"><button type="button" class="btn btn-secondary">VOLVER</button></a>
+                </div>
+            </div>
+  </div>
+
+ <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+<div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Crear Expediente</strong>
+                            </div>
+                            <div class="card-body">
+
+
+
+
+			<form  action="?c=Expediente&a=Guardar" method="POST">
 
 				<input type="hidden" name="num_expediente" value="<?php echo $datos->num_expediente; ?>" />
 
 				<div class="form-group">
-					<span class="col-sm-3 control-label">Dui de Paciente *</span>
-					<div class="col-sm-6">
-					<input class="form-control" type="text" name="id_paciente" placeholder="DUI" value="<?php echo $datos->id_paciente; ?>">
-				</div>	
+                     <div class="input-group">
+                                 <input type="text" name="id_paciente" placeholder="DUI" value="<?php echo $datos->id_paciente; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				</div>
+               <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" name="diagnostico" placeholder="Diagnostico"  id="diagnostico" value="<?php echo $datos->diagnostico; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Diagnostico *</span>
-					<div class="col-sm-6">
-					<input class="form-control" type="text" name="diagnostico" placeholder="Diagnostico"  id="diagnostico" value="<?php echo $datos->diagnostico; ?>">
-				</div>	
-				</div>
+                <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" placeholder="Medicamento" name="medicamento" id="medicamento" value="<?php echo $datos->medicamento; ?>"class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Medicamento</span>
-					<div class="col-sm-6">
-					<input class="form-control" type="text" name="medicamento" id="medicamento" value="<?php echo $datos->medicamento; ?>">
-				</div>
-				</div>
-
-				<div class="form-group" >
-					<label class="col-sm-3 control-label" for="Medico">Medico</label>
-					<div class="col-sm-6">
-								<select class="form-control" name="id_medico" id="id_medico">
-								<?php foreach($this->model->ListarMedico() as $r): ?>	
+                 <div class="row form-group">
+                        <div class="col col-md-3"><label for="selectSm" class=" form-control-label">Medico</label></div>
+                            <div class="col-12 col-md-9">
+                                        <select name="id_medico" id="id_medico" class="form-control-sm form-control">
+                                        	<?php foreach($this->model->ListarMedico() as $r): ?>	
 								  <option value="<?php echo $r->id_medico;?>"><?php echo $r->nombre_medico;?></option>
 								  <?php endforeach; ?>
-								</select>
-					</div>
-				</div>
+                                        </select>
+                            </div>
+                   </div>
 
+                   <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text"name="peso" placeholder="Peso" id="peso" value="<?php echo $datos->peso; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Peso</span>
-					<div class="col-sm-6">
-					<input class="form-control"  type="text" name="peso" placeholder="Peso" id="peso" value="<?php echo $datos->peso; ?>">
-				</div>
-				</div>
+                <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" name="altura" placeholder="Altura" id="altura" value="<?php echo $datos->altura; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Altura</span>
-					<div class="col-sm-6">
-					<input class="form-control"  type="text" name="altura" placeholder="Altura" id="altura" value="<?php echo $datos->altura; ?>">
-				</div>
-				</div>
+                <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" placeholder="Cirugias" name="cirugias" id="cirugias" value="<?php echo $datos->cirugias; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div>
 
+                <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" placeholder="Antecedentes"  name="antecedentes" id="antecedentes" value="<?php echo $datos->antecedentes; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Cirugias</span>
-					<div class="col-sm-6">
-					<input class="form-control" name="cirugias" id="cirugias" value="<?php echo $datos->cirugias; ?>">
-				</div>
-				</div>
+                  <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text"  placeholder="Enfermedades" name="enfermedades" id="enfermedades" value="<?php echo $datos->enfermedades; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
+                <div class="form-group">
+                     <div class="input-group">
+                                 <input type="text" placeholder="Vacunas" name="vacunas" id="vacunas" value="<?php echo $datos->vacunas; ?>" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                     </div>
+                </div> 
 
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Antecedentes</span>
-					<div class="col-sm-6">
-					<input class="form-control" name="antecedentes" id="antecedentes" value="<?php echo $datos->antecedentes; ?>">
-				</div>
-				</div>
-
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Enfermedades</span>
-					<div class="col-sm-6">
-					<input class="form-control" type="text" name="enfermedades" id="enfermedades" value="<?php echo $datos->enfermedades; ?>">
-				</div>
-				</div>
-				<div class="form-group">
-					<span class="col-sm-3 control-label">Vacunas</span>
-					<div class="col-sm-6">
-					<input class="form-control" name="vacunas" id="vacunas" value="<?php echo $datos->vacunas; ?>">
-				</div>
-				</div>
-				
-
-				</div>
-
-				
-
-				<div class="form-group">
-				<div class="col-sm-offset-3 col-sm-9 m-t-15">
-				<input type="submit"  name="btn_register" class="btn btn-primary " value="Guardar">
-				</div>
-				</div>
-
-			</form>
-		</div>
-	</div>
-
+                 <div class="form-actions form-group">
+                    <button type="submit" name="btn_register" class="btn btn-primary btn-sm">Guardar</button>
+                </div> 
+ </form>  
+       </div>
+                        </div>
+                    </div>
+ </div>
+  </div>
+   </div>
+   
+</body>
+</html>

@@ -33,7 +33,10 @@ class MedicoController{
         $datos->id_medico= $_REQUEST['id_medico'];
 		$datos->nombre_medico=$_REQUEST['nombre_medico'];
 		$datos->JVPM= $_REQUEST['JVPM'];
+        $datos->telefono= $_REQUEST['telefono'];
+        $datos->direccion= $_REQUEST['direccion'];        
 		$datos->id_especialidad= $_REQUEST['id_especialidad'];
+        $datos->estado= $_REQUEST['estado'];        
         $datos->id_cargo= $_REQUEST['id_cargo'];
         
 

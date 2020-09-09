@@ -4,7 +4,10 @@ class Medico{
 	public $id_medico;
 	public $nombre_medico;
 	public $JVPM;
+	public $telefono;
+	public $direccion;
 	public $id_especialidad;
+	public $estado;
 	public $id_cargo;
 	
 	
@@ -21,7 +24,7 @@ class Medico{
 		try{
 
 			$result=array();
-			$stm=$this->pdo->prepare("SELECT * FROM medico");
+			$stm=$this->pdo->prepare("SELECT a.id_medico as id_medico, a.nombre_medico as nombre_medico, a.JVPM as JVPM, a.telefono as telefono, a.direccion as direccion, b.nombre_esp as id_especialidad, a.estado as estado, c.nombre_cargo as id_cargo FROM medico as a INNER JOIN especialidad as b on a.id_especialidad = b.id_especialidad INNER JOIN cargos as c on a.id_cargo= c.id_cargo");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		}
@@ -70,10 +73,12 @@ class Medico{
 			die($e->getMessage());
 		}
 	}
+
+
 	public function Actualizar($data){
 		try{
 			$sql = 'UPDATE medico
-			SET nombre_medico= ?, JVPM= ?
+			SET nombre_medico= ?, JVPM= ?, telefono= ?, direccion=?, id_especialidad=?, estado=?
 			WHERE id_medico=?
 			';
 			$this->pdo->prepare($sql)->execute
@@ -81,6 +86,10 @@ class Medico{
 					array(
 						$data->nombre_medico,
 						$data->JVPM,
+						$data->telefono,
+						$data->direccion,
+						$data->id_especialidad,
+						$data->estado,	 		
 						$data->id_medico
 						)
 				);
@@ -95,14 +104,19 @@ class Medico{
 		try{
 			
 			
-			$sql = "INSERT INTO medico(nombre_medico, JVPM, id_especialidad, id_cargo)
-			VALUES(?,?,?,'1')";
+			$sql = "INSERT INTO medico(nombre_medico, JVPM, telefono, direccion, id_especialidad, estado, id_cargo)
+			VALUES(?,?,?,?,?,?,'2')";
 			$this->pdo->prepare($sql)->execute
 			(
 				array(
 					   $data->nombre_medico,
 					   $data->JVPM,
-					   $data->id_especialidad
+					   $data->telefono,
+					   $data->direccion,
+					   $data->id_especialidad,
+					   $data->estado,
+					   				   
+					   	   
 				)
 			);
 			
