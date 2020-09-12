@@ -42,7 +42,7 @@
 		public function Obtener($id_cita){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM citas");
+			          ->prepare("SELECT * FROM citas WHERE id_cita = ?");
 			          
 
 			$stm->execute(array($id_cita));

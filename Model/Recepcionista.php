@@ -40,7 +40,7 @@ class Recepcionista{
 	public function Obtener($id_recepcionista){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM recepcionista");
+			          ->prepare("SELECT * FROM recepcionista WHERE id_recepcionista= ?");
 			          
 
 			$stm->execute(array($id_recepcionista));

@@ -3,28 +3,6 @@
  include "welcomeadmin.php";
 ?>
 
-<body>
-    <?php
-		if(isset($errorMsg))
-		{
-			foreach($errorMsg as $error)
-			{
-			?>
-				<div class="alert alert-danger">
-					<strong>WRONG ! <?php echo $error; ?></strong>
-				</div>
-            <?php
-			}
-		}
-		if(isset($registerMsg))
-		{
-		?>
-			<div class="alert alert-success">
-				<strong><?php echo $registerMsg; ?></strong>
-			</div>
-        <?php
-		}
-		?>  
 
 <div class="breadcrumbs">
             <div class="col-sm-4">

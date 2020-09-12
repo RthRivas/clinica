@@ -16,7 +16,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="?c=Citas&a=Crud"><span class="icon-Nuevo" ></span>Crear Cita 💾</a></center></li>
+                            <li><a href="?c=Recetas&a=Crud"><span class="icon-Nuevo" ></span>Crear nueva receta 💾</a></center></li>
 
                         </ol>
                     </div>
@@ -37,28 +37,28 @@
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th># de receta</th>
 											<th>Paciente</th>
 											<th>Medico</th>
-											<th>Enfermera</th>
-											<th>Hecha</th>
-											<th>Hora</th>
+											<th>fecha</th>
 											<th>Opciones</th> 
+                                            <th>Detalle</th> 
                                         </tr>
                                     </thead>
-                                    <?php foreach($this->model->ListarCitas() as $r): ?>
+                                    <?php foreach($this->model->ListarReceta() as $r): ?>
                                     <tbody>
                                         <tr>
-                                             <TD><?php echo $r->id_cita;?></TD>
+                                             <TD><?php echo $r->id_receta;?></TD>
                                           <TD><?php echo $r->id_paciente;?></TD>
                                             <TD><?php echo $r->id_medico;?></TD>
-                                            <TD><?php echo $r->id_enfermera;?></TD>
                                             <TD><?php echo $r->fecha;?></TD>
-                                            <TD><?php echo $r->hora;?></TD>
                                             
-                                           <TD><a class="btn btn-warning btn-sm" href="?c=Citas&a=Crud&id_cita=<?php echo $r->id_cita; ?>">Editar 📝 </a>
-                                                <a class="btn btn-danger btn-sm" href="?c=Citas&a=Eliminar&id_cita=<?php echo $r->id_cita; ?>">Eliminar 🗑️</a>
+                                           <TD><a class="btn btn-warning btn-sm" href="?c=Recetas&a=Crud&id_receta=<?php echo $r->id_receta; ?>">Editar 📝 </a>
+                                                <a class="btn btn-danger btn-sm" href="?c=Recetas&a=Eliminar&id_receta=<?php echo $r->id_receta; ?>">Eliminar 🗑️</a>
                                             </TD>
+
+                                            <td><a class="btn btn-success" href="?c=Recetas&a=MostrarR&id_receta=<?php echo $r->id_receta; ?>">Ver Receta</a></td>
+
                                         </TR>    
                                     <?php endforeach; ?>      
                                     </tbody>

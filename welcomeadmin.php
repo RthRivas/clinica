@@ -99,7 +99,7 @@
                     </li>
 
                     <li>
-                        <a href="#"> <i class="menu-icon ti-folder"></i>Recetas </a>
+                        <a href="IndexRecetas.php"> <i class="menu-icon ti-folder"></i>Recetas </a>
                     </li>
                     
                 </ul>

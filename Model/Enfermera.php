@@ -39,7 +39,7 @@ class Enfermera{
 	public function Obtener($id_enfermera){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM enfermera");
+			          ->prepare("SELECT * FROM enfermera WHERE id_enfermera = ?");
 			          
 
 			$stm->execute(array($id_enfermera));

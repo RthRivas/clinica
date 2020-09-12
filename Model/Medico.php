@@ -52,7 +52,7 @@ class Medico{
 	public function Obtener($id_medico){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM medico");
+			          ->prepare("SELECT * FROM medico WHERE id_medico = ?");
 			          
 
 			$stm->execute(array($id_medico));
