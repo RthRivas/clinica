@@ -67,29 +67,5 @@ class ExpedienteController{
         header('Location: indexExpediente.php');
     }
 
-    public function Mostrar(){
 
-        $datos = new Expediente();
-
-       $datos->num_expediente= $_REQUEST['num_expediente'];
-        $datos->id_paciente=$_REQUEST['id_paciente'];
-        $datos->diagnostico= $_REQUEST['diagnostico'];
-        $datos->medicamento= $_REQUEST['medicamento'];
-        $datos->id_medico= $_REQUEST['id_medico'];
-        $datos->peso= $_REQUEST['peso'];
-        $datos->altura= $_REQUEST['altura'];
-        $datos->cirugias= $_REQUEST['cirugias'];
-        $datos->antecedentes= $_REQUEST['antecedentes'];
-        $datos->enfermedades= $_REQUEST['enfermedades'];
-        $datos->vacunas= $_REQUEST['vacunas'];
-        
-
-    
-   $datos->num_expediente > 0 
-            ? $this->model->ListarEx($datos)
-            : $this->model->Registrar($datos);
-        
-        
-        header('Location: indexExpediente.php');
-    }
 }

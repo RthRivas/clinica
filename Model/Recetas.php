@@ -21,7 +21,7 @@ class Recetas{
 	public function Obtener($id_receta){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM recetas WHERE id_receta = ?");
+			          ->prepare("SELECT a.id_receta as id_receta, b.nombre_paciente as id_paciente, c.nombre_medico as id_medico, a.descripcion as descripcion, a.fecha as fecha  FROM recetas as a INNER JOIN ficha_paciente as b on a.id_paciente = b.id_paciente INNER JOIN medico as c on a.id_medico = c.id_medico WHERE id_receta = ?");
 			          
 
 			$stm->execute(array($id_receta));
@@ -38,7 +38,7 @@ public function ListarReceta()
 			try
 			{
 				$result = array();
-				$cmd=$this->pdo->prepare("SELECT a.id_receta as id_receta, b.nombre_paciente as id_paciente, c.nombre_medico as id_medico, a.fecha as fecha  FROM recetas as a INNER JOIN ficha_paciente as b on a.id_paciente = b.id_paciente INNER JOIN medico as c on a.id_medico = c.id_medico");
+				$cmd=$this->pdo->prepare("SELECT a.id_receta as id_receta, b.nombre_paciente as id_paciente, c.nombre_medico as id_medico,  a.descripcion as descripcion, a.fecha as fecha  FROM recetas as a INNER JOIN ficha_paciente as b on a.id_paciente = b.id_paciente INNER JOIN medico as c on a.id_medico = c.id_medico");
 				$cmd->execute();
 
 				return $cmd->fetchAll(PDO::FETCH_OBJ);

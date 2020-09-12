@@ -29,7 +29,7 @@ class Expediente{
 		public function Obtener($num_expediente){
 		try{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM expediente WHERE num_expediente = ?");
+			          ->prepare("SELECT a.num_expediente as num_expediente, b.nombre_paciente as id_paciente, a.diagnostico as diagnostico, a.medicamento as medicamento, d.nombre_medico as id_medico, a.peso as peso, a.altura as altura, a.cirugias as cirugias, a.antecedentes as antecedentes, a.enfermedades as enfermedades, a.vacunas as vacunas FROM expediente as a INNER JOIN ficha_paciente as b on a.id_paciente = b.id_paciente INNER JOIN medico as d on a.id_medico = d.id_medico WHERE num_expediente = ?");
 			          
 			$stm->execute(array($num_expediente));
 			return $stm->fetch(PDO::FETCH_OBJ);
