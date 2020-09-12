@@ -50,7 +50,7 @@ class RecetasController{
         $datos->fecha = $_REQUEST['fecha'];       
    
 
-   $datos->id_paciente > 0 
+   $datos->id_receta > 0 
             ? $this->model->Actualizar($datos)
             : $this->model->Registrar($datos);
         
