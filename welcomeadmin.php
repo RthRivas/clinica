@@ -32,11 +32,13 @@
     <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
 
 
+
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
+
 
 
     <aside id="left-panel" class="left-panel">
@@ -73,6 +75,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-user"></i><a href="indexUsuarios.php">Usuarios</a></li>
                             <li><i class="fa fa-user"></i><a href="indexMedico.php">Medicos</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="indexEnfermera.php">Enfermeras</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="indexRecepcionista.php">Recepcionista</a></li>
@@ -147,28 +150,9 @@
     <script src="assets/js/main.js"></script>
 
 
+
+
     <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/widgets.js"></script>
-    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script>
-        (function($) {
-            "use strict";
-
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
-            });
-        })(jQuery);
-    </script>
-
+   

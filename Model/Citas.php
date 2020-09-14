@@ -27,7 +27,7 @@
 		
 			$result=array();
 			$id = $_SESSION['user_login'];
-			if ($id==6)
+			if ($id==4)
             {
             	$stm=$this->pdo->prepare("SELECT a.id_cita as id_cita, b.nombre_medico as id_medico, c.nombre_enfermera as id_enfermera, d.nombre_paciente as id_paciente, a.fecha as fecha, a.hora as hora FROM citas as a INNER JOIN medico as b on a.id_medico = b.id_medico INNER JOIN enfermera as c on a.id_enfermera = c.id_enfermera INNER JOIN ficha_paciente as d on a.id_paciente = d.id_paciente");
             }else {

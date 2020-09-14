@@ -36,9 +36,10 @@ class MedicoController{
         $datos->telefono= $_REQUEST['telefono'];
         $datos->direccion= $_REQUEST['direccion'];        
 		$datos->id_especialidad= $_REQUEST['id_especialidad'];
-        $datos->estado= $_REQUEST['estado'];        
-        $datos->id_cargo= $_REQUEST['id_cargo'];
-        
+        $datos->estado= $_REQUEST['estado'];
+        $datos->Userid= $_REQUEST['Userid'];
+
+
 
         $datos->id_medico > 0 
             ? $this->model->Actualizar($datos)
@@ -47,6 +48,21 @@ class MedicoController{
         header('Location: indexMedico.php');
     }
     
+    public function GuardarEsp(){
+        $datos = new Medico();
+        
+        $datos->id_especialidad= $_REQUEST['id_especialidad'];
+        $datos->nombre_esp=$_REQUEST['nombre_esp'];
+        
+
+        $datos->id_especialidad > 0 
+            ? $this->model->ActualizarEsp($datos)
+            : $this->model->RegistrarEsp($datos);
+        
+        header('Location: medico-editar.php');
+    }
+
+
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_medico']);
         header('Location: indexMedico.php');

@@ -37,7 +37,7 @@ if(isset($_REQUEST['btn_register'])) //button name "btn_register"
 			$row=$select_stmt->fetch(PDO::FETCH_ASSOC);	
 			
 			if($row["username"]==$username){
-				$errorMsg[]="Nombre de usuario ya existe actualmente";	//check condition username already exists 
+				//$errorMsg[]="Nombre de usuario ya existe actualmente";	//check condition username already exists 
 			}
 			else if($row["email"]==$email){
 				$errorMsg[]="Correo electrolico ya existe actualmente";	//check condition email already exists 

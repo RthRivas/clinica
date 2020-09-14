@@ -3,14 +3,13 @@
  include "welcomeadmin.php";
 ?>
 
-
 <body>
 
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                       <a>Registro de Medicos</button></a>
+                       <a>Agregar Especialidad</button></a>
                     </div>
                     <a href="indexMedico.php"><button type="button" class="btn btn-secondary">VOLVER</button></a>
                 </div>
@@ -76,24 +75,6 @@
                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
                      </div>
                 </div>
-        
-                  <div class="row form-group">
-                        <div class="col col-md-3"><label for="selectSm" class=" form-control-label">Usuario Asignado</label></div>
-                            <div class="col-12 col-md-9">
-                                        <select class="form-control" name="Userid" id="Userid">
-                                <?php foreach($this->model->ListarUsuarios() as $r): ?>  
-                                  <option value="<?php echo $r->Userid;?>"><?php echo $r->username;?></option>
-                                  <?php endforeach; ?>
-                                </select>
-                            </div>
-                   </div>
-
-
-
-                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#scrollmodal">
-                            Crear usuario
-                        </button>
-
 
 
 	<div class="form-actions form-group">
@@ -106,37 +87,6 @@
  </div>
   </div>
    </div>
-
-
-                    <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="scrollmodalLabel">Scrolling Long Content Modal</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    <?php
-                                 include "registroempleados.php";
-                                        ?>
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary">Confirm</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-     <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
    
 </body>
 </html>

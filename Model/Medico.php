@@ -9,6 +9,14 @@ class Medico{
 	public $id_especialidad;
 	public $estado;
 	public $id_cargo;
+	public $Userid;
+	public $username;
+	public $email;
+	public $pass;
+	
+	
+	
+	
 	
 	
 	public function __CONSTRUCT(){
@@ -78,7 +86,7 @@ class Medico{
 	public function Actualizar($data){
 		try{
 			$sql = 'UPDATE medico
-			SET nombre_medico= ?, JVPM= ?, telefono= ?, direccion=?, id_especialidad=?, estado=?
+			SET nombre_medico= ?, JVPM= ?, telefono= ?, direccion=?, id_especialidad=?, estado=?, Userid =?
 			WHERE id_medico=?
 			';
 			$this->pdo->prepare($sql)->execute
@@ -89,7 +97,8 @@ class Medico{
 						$data->telefono,
 						$data->direccion,
 						$data->id_especialidad,
-						$data->estado,	 		
+						$data->estado,	 
+						$data->Userid,								
 						$data->id_medico
 						)
 				);
@@ -104,8 +113,8 @@ class Medico{
 		try{
 			
 			
-			$sql = "INSERT INTO medico(nombre_medico, JVPM, telefono, direccion, id_especialidad, estado, id_cargo)
-			VALUES(?,?,?,?,?,?,'2')";
+			$sql = "INSERT INTO medico(nombre_medico, JVPM, telefono, direccion, id_especialidad, estado, id_cargo, Userid)
+			VALUES(?,?,?,?,?,'2',?)";
 			$this->pdo->prepare($sql)->execute
 			(
 				array(
@@ -115,6 +124,8 @@ class Medico{
 					   $data->direccion,
 					   $data->id_especialidad,
 					   $data->estado,
+					   $data->Userid,
+					   					   
 					   				   
 					   	   
 				)
@@ -125,6 +136,44 @@ class Medico{
 			die($e->getMessage());
 		}
 	}
+
+
+	public function ListarUsuarios(){
+		try{
+					
+		
+			$result=array();
+			$stm=$this->pdo->prepare("SELECT * FROM usuarios");
+			$stm->execute();
+			
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
+
+
+
+	public function RegistrarEsp($data){
+		try{
+			
+			
+			$sql = "INSERT INTO especialidad(nombre_esp)
+			VALUES(?)";
+			$this->pdo->prepare($sql)->execute
+			(
+				array(
+					   $data->nombre_esp					   	   
+				)
+			);
+			
+		}
+		catch(Exception $e){
+			die($e->getMessage());
+		}
+	}
+
 
 		 
 	
